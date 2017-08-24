@@ -50,23 +50,29 @@ class MapPatternTest < Minitest::Test
   end
 
   def test_backwards
-    skip
     names = ["alice", "bob", "charlie", "david", "eve"]
-    # Your code goes here
+    backwards = []
+    names.each do |name|
+      backwards << name.reverse
+    end
     assert_equal ["ecila", "bob", "eilrahc", "divad", "eve"], backwards
   end
 
   def test_words_with_no_vowels
-    skip
     words = ["green", "sheep", "travel", "least", "boat"]
-    # Your code goes here
+    without_vowels = []
+    words.each do |word|
+      without_vowels << word.gsub(/[aeiou]/, '')
+    end
     assert_equal ["grn", "shp", "trvl", "lst", "bt"], without_vowels
   end
 
   def test_trim_last_letter
-    skip
     animals = ["dog", "cat", "mouse", "frog", "platypus"]
-    # Your code goes here
+    trimmed = []
+    animals.each do |animal|
+      trimmed << animal.chop
+    end
     assert_equal ["do", "ca", "mous", "fro", "platypu"], trimmed
   end
 
